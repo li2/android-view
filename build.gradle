@@ -30,10 +30,14 @@ allprojects {
         vMinSdk = 19
         vTargetSdk = 29
 
+        // My Libraries Dependencies
+        vLi2Common = '0.1.0'
+
         // Android X Dependencies
         vAndroidxAppcompat = '1.1.0'
         vAndroidxCoreKtx = '1.2.0'
         vAndroidxConstraintlayout = "2.0.0-beta4"
+        vAndroidxSwiperefreshlayout = "1.0.0"
 
         // Google Dependencies
         vGoogleMaterial = '1.2.0-alpha05'
