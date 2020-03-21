@@ -2,6 +2,7 @@
  * Created by weiyi on 2019-10-28.
  * https://github.com/li2
  */
+@file:JvmName("EditTextViewExtensions")
 package me.li2.android.view.textview
 
 import android.view.inputmethod.EditorInfo
