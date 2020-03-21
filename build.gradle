@@ -51,6 +51,7 @@ allprojects {
         vRxKotlin = '2.3.0'
 
         // Misc
+        vGlide = "4.10.0"
         vTimber = "4.7.1"
 
         // Test Dependencies
