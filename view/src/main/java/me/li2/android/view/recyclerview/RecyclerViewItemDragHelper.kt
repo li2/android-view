@@ -9,11 +9,33 @@ interface OnRecyclerItemDragListener {
     fun onItemSwiped(position: Int)
 }
 
-class RecyclerItemDragHelper(private val listener: OnRecyclerItemDragListener) : ItemTouchHelper.Callback() {
+/**
+ * ItemTouchHelper to help drag and swipe items in RecyclerView.
+ * You don't need to call [ItemTouchHelper.attachToRecyclerView]
+ *
+ * @param listener callback when item was moved or swiped.
+ * @param isLongPressDragEnabled true to allow drag and drop operation when an item is long pressed.
+ *  you may want to disable this if you want to start dragging on a custom view touch using [ItemTouchHelper.startDrag].
+ * @param isItemViewSwipeEnabled true to allow a swipe operation if a pointer is swiped over the View.
+ *  you may want to disable this if you want to start swiping on a custom view touch using [ItemTouchHelper.startSwipe].
+ * @return [ItemTouchHelper]
+ */
+fun RecyclerView.itemDragHelper(listener: OnRecyclerItemDragListener,
+                                isLongPressDragEnabled: Boolean = true,
+                                isItemViewSwipeEnabled: Boolean = true): ItemTouchHelper {
+    return ItemTouchHelper(RecyclerViewItemDragHelper(listener, isLongPressDragEnabled, isItemViewSwipeEnabled)).also {
+        it.attachToRecyclerView(this)
+    }
+}
 
-    override fun isLongPressDragEnabled(): Boolean = true
+private class RecyclerViewItemDragHelper(
+        private val listener: OnRecyclerItemDragListener,
+        private val isLongPressDragEnabled: Boolean,
+        private val isItemViewSwipeEnabled: Boolean) : ItemTouchHelper.Callback() {
 
-    override fun isItemViewSwipeEnabled(): Boolean = true
+    override fun isLongPressDragEnabled(): Boolean = isLongPressDragEnabled
+
+    override fun isItemViewSwipeEnabled(): Boolean = isItemViewSwipeEnabled
 
     override fun getMovementFlags(recyclerView: RecyclerView,
                                   viewHolder: RecyclerView.ViewHolder): Int {
