@@ -13,44 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:JvmName("Toasts")
 package me.li2.android.view.toast
 
 import android.content.Context
 import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 
-/**
- * Display the simple Toast message with the [Toast.LENGTH_SHORT] duration.
- *
- * @param message the message text.
- */
+fun Fragment.toast(@StringRes resId: Int) = activity?.toast(resId)
 fun Fragment.toast(message: CharSequence) = activity?.toast(message)
-
-/**
- * Display the simple Toast message with the [Toast.LENGTH_SHORT] duration.
- *
- * @param message the message text.
- */
-fun Context.toast(message: CharSequence): Toast = Toast
-    .makeText(this, message, Toast.LENGTH_SHORT)
-    .apply {
-        show()
-    }
-
-/**
- * Display the simple Toast message with the [Toast.LENGTH_LONG] duration.
- *
- * @param message the message text.
- */
+fun Fragment.longToast(@StringRes resId: Int) = activity?.longToast(resId)
 fun Fragment.longToast(message: CharSequence) = activity?.longToast(message)
 
-/**
- * Display the simple Toast message with the [Toast.LENGTH_LONG] duration.
- *
- * @param message the message text.
- */
-fun Context.longToast(message: CharSequence): Toast = Toast
-    .makeText(this, message, Toast.LENGTH_LONG)
-    .apply {
-        show()
-    }
+fun Context.toast(@StringRes resId: Int): Toast = toast(resId, Toast.LENGTH_SHORT)
+fun Context.toast(message: CharSequence): Toast = toast(message, Toast.LENGTH_SHORT)
+fun Context.longToast(@StringRes resId: Int): Toast = toast(resId, Toast.LENGTH_LONG)
+fun Context.longToast(message: CharSequence): Toast = toast(message, Toast.LENGTH_LONG)
+
+private fun Context.toast(@StringRes resId: Int, duration: Int): Toast =
+        toast(resources.getString(resId), duration)
+
+private fun Context.toast(message: CharSequence, duration: Int): Toast = Toast
+        .makeText(this, message, duration)
+        .apply {
+            show()
+        }
