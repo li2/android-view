@@ -126,7 +126,7 @@ class AdvancedWebView @JvmOverloads constructor(
 
     companion object {
         @JvmStatic
-        @BindingAdapter(value = ["app:url", "app:additionalHttpHeaders"], requireAll = false)
+        @BindingAdapter(value = ["url", "additionalHttpHeaders"], requireAll = false)
         fun loadUrl(webView: AdvancedWebView,
                     url: String?,
                     additionalHttpHeaders: Map<String, String>? = null) {
@@ -134,7 +134,7 @@ class AdvancedWebView @JvmOverloads constructor(
         }
 
         @JvmStatic
-        @BindingAdapter("app:userAgentString")
+        @BindingAdapter("userAgentString")
         fun setUserAgentString(webView: AdvancedWebView, userAgentString: String?) {
             userAgentString?.let { webView.setUserAgentString(it) }
         }

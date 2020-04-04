@@ -15,7 +15,7 @@ object EditTextViewBindings {
      * @see <a href="https://stackoverflow.com/questions/3406534/password-hint-font-in-android/3444882#3444882">fix hint font mess issue when set EditText inputType as textPassword.</a>
      */
     @JvmStatic
-    @BindingAdapter("app:passwordInputType")
+    @BindingAdapter("passwordInputType")
     fun setPasswordInputType(editText: EditText, enabled: Boolean?) {
         if (enabled.orFalse()) {
             editText.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD

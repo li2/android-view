@@ -11,8 +11,10 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 
 object TextViewBindings {
+
+    @Suppress("DEPRECATION")
     @JvmStatic
-    @BindingAdapter("app:htmlText")
+    @BindingAdapter("htmlText")
     fun setHtmlText(textView: TextView, stringRes: String) {
         fun fromHtmlCompat(source: String): Spanned {
             return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

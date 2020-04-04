@@ -27,11 +27,11 @@ object ImageBindings {
     @JvmStatic
     @BindingAdapter(value = [
         "android:src",
-        "app:fallbackImageUrl",
-        "app:placeHolder",
-        "app:centerCrop",
-        "app:circleCrop",
-        "app:fitCenter"
+        "fallbackImageUrl",
+        "placeHolder",
+        "centerCrop",
+        "circleCrop",
+        "fitCenter"
     ], requireAll = false)
     fun setImageUrl(view: ImageView,
                     src: String?,

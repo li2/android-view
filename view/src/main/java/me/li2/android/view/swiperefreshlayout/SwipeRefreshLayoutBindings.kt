@@ -5,7 +5,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 object SwipeRefreshLayoutBindings {
     @JvmStatic
-    @BindingAdapter("app:isRefreshing")
+    @BindingAdapter("isRefreshing")
     fun setSwipeRefreshLayoutRefreshing(srl: SwipeRefreshLayout, value: Boolean) {
         srl.isRefreshing = value
     }

@@ -6,10 +6,6 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion vCompileSdk
 
-    dataBinding {
-        enabled = true
-    }
-
     defaultConfig {
         applicationId 'me.li2.android.viewsample'
         minSdkVersion vMinSdk
@@ -25,6 +21,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 
     compileOptions {
