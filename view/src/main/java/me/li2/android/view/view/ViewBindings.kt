@@ -13,7 +13,7 @@ object ViewBindings {
     }
 
     @JvmStatic
-    @BindingAdapter("app:invisibility")
+    @BindingAdapter("invisibility")
     fun setViewInvisibility(view: View, value: Boolean?) {
         view.visibility = if (value.orFalse()) INVISIBLE else VISIBLE
     }

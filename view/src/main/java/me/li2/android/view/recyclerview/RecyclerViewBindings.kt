@@ -11,7 +11,7 @@ import me.li2.android.common.number.orZero
 
 object RecyclerViewBindings {
     @JvmStatic
-    @BindingAdapter("app:linearSpacing")
+    @BindingAdapter("linearSpacing")
     fun setItemLinearSpacing(recyclerView: RecyclerView, spacing: Float?) {
         val orientation = (recyclerView.layoutManager as? LinearLayoutManager)?.orientation
                 ?: RecyclerView.VERTICAL

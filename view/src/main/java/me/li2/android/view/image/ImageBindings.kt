@@ -10,12 +10,6 @@ import me.li2.android.common.logic.orFalse
 object ImageBindings {
     @JvmStatic
     @BindingAdapter("android:src")
-    fun setImageDrawable(view: ImageView, drawable: Drawable) {
-        view.setImageDrawable(drawable)
-    }
-
-    @JvmStatic
-    @BindingAdapter("android:src")
     fun setImageResource(imageView: ImageView, resource: Int) {
         imageView.setImageResource(resource)
     }
@@ -27,11 +21,11 @@ object ImageBindings {
     @JvmStatic
     @BindingAdapter(value = [
         "android:src",
-        "app:fallbackImageUrl",
-        "app:placeHolder",
-        "app:centerCrop",
-        "app:circleCrop",
-        "app:fitCenter"
+        "fallbackImageUrl",
+        "placeHolder",
+        "centerCrop",
+        "circleCrop",
+        "fitCenter"
     ], requireAll = false)
     fun setImageUrl(view: ImageView,
                     src: String?,

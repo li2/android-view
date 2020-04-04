@@ -12,7 +12,7 @@ import me.li2.android.common.logic.orFalse
 
 object ToolbarBindings {
     @JvmStatic
-    @BindingAdapter("app:collapsingScrollEnabled")
+    @BindingAdapter("collapsingScrollEnabled")
     fun setCollapsingToolbarLayoutScrollEnabled(collapsingToolbarLayout: CollapsingToolbarLayout,
                                                 enabled: Boolean?) {
         val lp = collapsingToolbarLayout.layoutParams as LayoutParams

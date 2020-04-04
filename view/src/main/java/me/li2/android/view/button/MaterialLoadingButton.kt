@@ -3,9 +3,7 @@ package me.li2.android.view.button
 import android.content.Context
 import android.graphics.Canvas
 import android.util.AttributeSet
-import androidx.databinding.BindingAdapter
 import com.google.android.material.button.MaterialButton
-import me.li2.android.common.logic.orFalse
 import kotlin.math.min
 
 /**
@@ -28,7 +26,7 @@ class MaterialLoadingButton @JvmOverloads constructor(
     private var animatedDrawable: CircularAnimatedDrawable? = null
     private var originalText = ""
 
-    var isLoading = false
+    var isLoading: Boolean = false
         set(value) {
             field = value
             isClickable = !value
@@ -69,11 +67,5 @@ class MaterialLoadingButton @JvmOverloads constructor(
     companion object {
         private const val SPINNER_RADIUS_PERCENT = 0.35f
         private const val SPINNER_STROKE_WIDTH = 8f
-
-        @JvmStatic
-        @BindingAdapter("isLoading")
-        fun setLoading(button: MaterialLoadingButton, isLoading: Boolean?) {
-            button.isLoading = isLoading.orFalse()
-        }
     }
 }
