@@ -17,7 +17,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import kotlinx.android.synthetic.main.advanced_webview.view.*
 import me.li2.android.view.R
 import me.li2.android.view.databinding.AdvancedWebviewBinding
 
@@ -106,7 +105,7 @@ class AdvancedWebView @JvmOverloads constructor(
     }
 
     fun setUserAgentString(userAgentString: String) {
-        binding.webview.settings.userAgentString = webview.settings.userAgentString.plus(userAgentString)
+        binding.webview.settings.userAgentString += userAgentString
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
@@ -131,12 +130,6 @@ class AdvancedWebView @JvmOverloads constructor(
                     url: String?,
                     additionalHttpHeaders: Map<String, String>? = null) {
             webView.loadUrl(url, additionalHttpHeaders)
-        }
-
-        @JvmStatic
-        @BindingAdapter("userAgentString")
-        fun setUserAgentString(webView: AdvancedWebView, userAgentString: String?) {
-            userAgentString?.let { webView.setUserAgentString(it) }
         }
     }
 }

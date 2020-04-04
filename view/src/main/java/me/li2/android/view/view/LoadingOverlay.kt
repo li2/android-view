@@ -6,7 +6,6 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.view.ViewCompat
-import androidx.databinding.BindingAdapter
 import me.li2.android.view.R
 import me.li2.android.view.toast.toast
 
@@ -34,14 +33,6 @@ class LoadingOverlayView @JvmOverloads constructor(
     override fun onClick(v: View?) {
         if (!toastText.isNullOrEmpty()) {
             context.toast(toastText.orEmpty())
-        }
-    }
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("loadingOverlayToast")
-        fun setLoadingOverlayToast(loadingOverlayView: LoadingOverlayView, toastText: String?) {
-            loadingOverlayView.toastText = toastText
         }
     }
 }
