@@ -26,7 +26,7 @@ class MaterialLoadingButton @JvmOverloads constructor(
     private var animatedDrawable: CircularAnimatedDrawable? = null
     private var originalText = ""
 
-    var isLoading = false
+    var isLoading: Boolean = false
         set(value) {
             field = value
             isClickable = !value
