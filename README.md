@@ -1,9 +1,8 @@
 [![](https://jitpack.io/v/li2/android-view.svg)](https://jitpack.io/#li2/android-view)
 
-## Common Library
+## Android View Library
 
 This library icludes bunches of  binding adapters and extension functions for existing views, also some custom views.
-
 
 ```
 ├── button
@@ -46,13 +45,11 @@ This library icludes bunches of  binding adapters and extension functions for ex
 TODO
 
 
-
 ## Download
 
 ```gradle
 implementation 'com.github.li2:android-view:latest_version'
 ```
-
 
 
 ## License
