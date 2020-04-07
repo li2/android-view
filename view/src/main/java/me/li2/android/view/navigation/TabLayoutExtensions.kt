@@ -3,7 +3,7 @@
  * https://github.com/li2
  */
 @file:JvmName("TabLayoutExtensions")
-package me.li2.android.view.tab
+package me.li2.android.view.navigation
 
 import com.google.android.material.tabs.TabLayout
 

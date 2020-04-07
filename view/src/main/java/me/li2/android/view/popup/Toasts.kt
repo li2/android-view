@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 @file:JvmName("Toasts")
-package me.li2.android.view.toast
+package me.li2.android.view.popup
 
 import android.content.Context
 import android.widget.Toast

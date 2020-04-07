@@ -1,4 +1,4 @@
-package me.li2.android.view.recyclerview
+package me.li2.android.view.list
 
 import android.graphics.Rect
 import android.view.View

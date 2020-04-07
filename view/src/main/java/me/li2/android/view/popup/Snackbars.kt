@@ -1,5 +1,5 @@
 @file:JvmName("Snackbars")
-package me.li2.android.view.snackbar
+package me.li2.android.view.popup
 
 import android.app.Activity
 import android.view.View

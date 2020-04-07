@@ -2,7 +2,7 @@
  * Created by weiyi on 2019-10-28.
  * https://github.com/li2
  */
-package me.li2.android.view.textview
+package me.li2.android.view.text
 
 import android.os.Build
 import android.text.Html

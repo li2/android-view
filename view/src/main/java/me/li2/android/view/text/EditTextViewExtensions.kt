@@ -3,7 +3,7 @@
  * https://github.com/li2
  */
 @file:JvmName("EditTextViewExtensions")
-package me.li2.android.view.textview
+package me.li2.android.view.text
 
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText

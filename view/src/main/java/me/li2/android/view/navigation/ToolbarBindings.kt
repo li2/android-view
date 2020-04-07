@@ -2,7 +2,7 @@
  * Created by Weiyi Li on 2019-11-03.
  * https://github.com/li2
  */
-package me.li2.android.view.toolbar
+package me.li2.android.view.navigation
 
 import androidx.databinding.BindingAdapter
 import com.google.android.material.appbar.AppBarLayout.LayoutParams

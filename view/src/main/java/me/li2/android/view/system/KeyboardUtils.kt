@@ -1,5 +1,9 @@
+/*
+ * Created by weiyi on 2019-10-28.
+ * https://github.com/li2
+ */
 @file:JvmName("KeyboardUtils")
-package me.li2.android.view.keyboard
+package me.li2.android.view.system
 
 import android.app.Activity
 import android.content.Context

@@ -2,7 +2,7 @@
  * Created by Weiyi Li on 2019-11-03.
  * https://github.com/li2
  */
-package me.li2.android.view.webview
+package me.li2.android.view.web
 
 import android.annotation.SuppressLint
 import android.content.Context

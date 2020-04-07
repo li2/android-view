@@ -1,4 +1,4 @@
-package me.li2.android.view.view
+package me.li2.android.view
 
 import android.view.View
 import android.view.View.*

@@ -1,5 +1,9 @@
+/*
+ * Created by weiyi on 2019-10-28.
+ * https://github.com/li2
+ */
 @file:JvmName("ToolbarExtensions")
-package me.li2.android.view.toolbar
+package me.li2.android.view.navigation
 
 import android.app.Activity
 import android.graphics.PorterDuff

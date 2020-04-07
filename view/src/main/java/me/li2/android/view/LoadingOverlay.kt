@@ -1,13 +1,15 @@
+/*
+ * Created by Weiyi Li on 2019-11-03.
+ * https://github.com/li2
+ */
 @file:Suppress("unused")
-
-package me.li2.android.view.view
+package me.li2.android.view
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.view.ViewCompat
-import me.li2.android.view.R
-import me.li2.android.view.toast.toast
+import me.li2.android.view.popup.toast
 
 /**
  * A transparent overlay view shows on top of the screen to block user touch events,

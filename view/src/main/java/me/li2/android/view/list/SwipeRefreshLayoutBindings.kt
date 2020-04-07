@@ -1,4 +1,4 @@
-package me.li2.android.view.swiperefreshlayout
+package me.li2.android.view.list
 
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout

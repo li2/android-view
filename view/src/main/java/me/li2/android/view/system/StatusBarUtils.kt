@@ -1,5 +1,9 @@
+/*
+ * Created by weiyi on 2019-10-28.
+ * https://github.com/li2
+ */
 @file:JvmName("StatusBarUtils")
-package me.li2.android.view.statusbar
+package me.li2.android.view.system
 
 import android.annotation.SuppressLint
 import android.app.Activity

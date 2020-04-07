@@ -2,7 +2,7 @@
  * Created by weiyi on 2019-10-28.
  * https://github.com/li2
  */
-package me.li2.android.view.recyclerview
+package me.li2.android.view.list
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.ACTION_STATE_DRAG
