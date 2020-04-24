@@ -4,45 +4,101 @@
 
 This library icludes bunches of  binding adapters and extension functions for existing views, also some custom views.
 
-```
+```xml
+├── LoadingOverlay.kt
+├── ViewBindings.kt
 ├── button
-│   └── MaterialLoadingButton.kt
+│   ├── CircularAnimatedDrawable.kt
+│   └── MaterialLoadingButton.kt
 ├── image
-│   └── ImageBindings.kt
-├── keyboard
-│   └── KeyboardUtils.kt
-├── recyclerview
-│   ├── GridSpacingDecoration.kt
-│   ├── LinearSpacingDecoration.kt
-│   ├── RecyclerViewBindings.kt
-│   └── RecyclerViewItemDragHelper.kt
-├── snackbar
-│   └── Snackbars.kt
-├── statusbar
-│   └── StatusBarUtils.kt
-├── swiperefreshlayout
-│   └── SwipeRefreshLayoutBindings.kt
-├── tab
-│   └── TabLayoutExtensions.kt
-├── textview
-│   ├── EditTextViewBindings.kt
-│   ├── EditTextViewExtensions.kt
-│   └── TextViewBindings.kt
-├── toast
-│   └── Toasts.kt
-├── toolbar
-│   ├── ToolbarBindings.kt
-│   └── ToolbarExtensions.kt
-├── view
-│   ├── LoadingOverlay.kt
-│   └── ViewBindings.kt
-└── webview
+│   └── ImageBindings.kt
+├── list
+│   ├── CardPageTransformer.kt
+│   ├── CarouselPagerHelper.kt
+│   ├── GridSpacingDecoration.kt
+│   ├── LinearSpacingDecoration.kt
+│   ├── RecyclerViewBindings.kt
+│   ├── RecyclerViewItemDragHelper.kt
+│   ├── SwipeRefreshLayoutBindings.kt
+│   ├── VerticalScrollView.kt
+│   ├── ViewPager2AutoScrollHelper.kt
+│   └── ViewPager2Ext.kt
+├── navigation
+│   ├── TabLayoutExtensions.kt
+│   ├── ToolbarBindings.kt
+│   └── ToolbarExtensions.kt
+├── popup
+│   ├── Snackbars.kt
+│   └── Toasts.kt
+├── system
+│   ├── KeyboardUtils.kt
+│   └── StatusBarUtils.kt
+├── text
+│   ├── EditTextViewBindings.kt
+│   ├── EditTextViewExtensions.kt
+│   └── TextViewBindings.kt
+└── web
     └── AdvancedWebView.kt
 ```
 
 ## Usage
 
-TODO
+
+### Display a list of items with RecyclerView, ViewPager, ScrollView, etc.
+
+`CardPageTransformer`
+a card effect transformer for ViewPager2
+
+```kotlin
+ViewPager2.setPageTransformer(CardPageTransformer(0.85f, 0.7f))
+```
+
+`CarouselPagerHelper`
+Provide carousel scroll ability for RecyclerView [ListAdapter] by mocking up the limited dataset with [Int.MAX_VALUE]
+
+```kotlin
+ class YourListAdapter : ListAdapter<Item, ItemViewHolder>(DIFF_CALLBACK), CarouselPagerHelper {
+     override val carouselDatasetSize: Int
+         get() = currentList.size
+
+     override fun onBindViewHolder(viewHolder: TopItemViewHolder, position: Int) {
+         val dataPosition = getCarouselDataPosition(position)
+         viewHolder.bind(getItem(dataPosition))
+     }
+     
+     override fun getItemCount() = getCarouselDisplaySize()
+ }
+```
+<img width="400" alt="CardPageTransformer+CarouselPagerHelper" src="screenshots/list-CardPageTransformer+CarouselPagerHelper.png">
+
+`ViewPager2AutoScrollHelper`
+an interface serve as a plugin to provide the ViewPager auto scroll ability.
+
+```kotlin
+class HomeFragment : Fragment(), ViewPager2AutoScrollHelper {
+    override val autoScrollViewPager get() = binding.viewPager
+    override val viewPagerAutoScrollPeriod = Pair(5L, TimeUnit.SECONDS)
+    override var viewPagerAutoScrollTask: Disposable? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        startViewPagerAutoScrollTask()
+    }
+
+    override fun onDestroyView() {
+        stopViewPagerAutoScrollTask()
+        super.onDestroyView()
+    }
+}
+```
+
+`ViewPager2Ext`
+- Ignore pull to refresh
+- Show the partial preview of left and right page of ViewPager.
+
+`VerticalScrollView`
+A scroll view will only intercept the event if theuser is deliberately scrolling in the Y direction, to make the horizontal scroll view scroll smooth.
+
 
 
 ## Download
