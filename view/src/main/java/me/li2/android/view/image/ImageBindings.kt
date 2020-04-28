@@ -27,6 +27,7 @@ object ImageBindings {
         "android:src",
         "fallbackImageUrl",
         "placeHolder",
+        "errorPlaceholder",
         "centerCrop",
         "circleCrop",
         "fitCenter"
@@ -35,6 +36,7 @@ object ImageBindings {
                     src: String?,
                     fallbackImageUrl: String?,
                     placeHolder: Drawable?,
+                    errorPlaceholder: Drawable?,
                     centerCrop: Boolean?,
                     circleCrop: Boolean?,
                     fitCenter: Boolean?) {
@@ -43,13 +45,16 @@ object ImageBindings {
             if (circleCrop.orFalse()) circleCrop()
             if (fitCenter.orFalse()) fitCenter()
             if (placeHolder != null) placeholder(placeHolder)
+            if (errorPlaceholder != null) error(errorPlaceholder)
         }
-        if (src != null) {
-            Glide.with(view.context)
-                    .load(src)
-                    .error(Glide.with(view.context).load(fallbackImageUrl))
-                    .apply(requestOptions)
-                    .into(view)
-        }
+        Glide.with(view.context)
+                .load(src)
+                .also {
+                    if (fallbackImageUrl != null) {
+                        it.error(Glide.with(view.context).load(fallbackImageUrl))
+                    }
+                }
+                .apply(requestOptions)
+                .into(view)
     }
 }
