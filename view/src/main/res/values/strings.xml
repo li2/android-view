@@ -1,3 +1,4 @@
 <resources>
     <string name="viewlib_loadingoverlay_loading">Loading…</string>
+    <string name="viewlib_overscroll_bounce_behavior" translatable="false">me.li2.android.view.list.OverScrollBounceBehavior</string>
 </resources>
