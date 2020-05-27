@@ -1,8 +1,8 @@
 @file:JvmName("Snackbars")
+@file:Suppress("unused")
 package me.li2.android.view.popup
 
 import android.app.Activity
-import android.view.View
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.BaseTransientBottomBar.Duration
@@ -26,7 +26,7 @@ private fun Activity.snackbar(@StringRes messageId: Int, @Duration duration: Int
         snackbar(getString(messageId), duration)
 
 private fun Activity.snackbar(message: CharSequence, @Duration duration: Int): Snackbar = Snackbar
-        .make(findViewById<View>(android.R.id.content), message, duration)
+        .make(findViewById(android.R.id.content), message, duration)
         .apply {
             show()
         }

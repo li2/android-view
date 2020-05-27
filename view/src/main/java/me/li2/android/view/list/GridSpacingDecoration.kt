@@ -1,3 +1,4 @@
+@file:Suppress("unused")
 package me.li2.android.view.list
 
 import android.graphics.Rect

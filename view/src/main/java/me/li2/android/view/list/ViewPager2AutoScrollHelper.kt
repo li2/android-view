@@ -2,6 +2,7 @@
  * Created by weiyi on 2020-04-18.
  * https://github.com/li2
  */
+@file:Suppress("unused")
 package me.li2.android.view.list
 
 import androidx.lifecycle.Lifecycle
@@ -9,10 +10,10 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.viewpager2.widget.ViewPager2
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.subjects.BehaviorSubject
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.subjects.BehaviorSubject
 import me.li2.android.common.number.orZero
 import java.util.concurrent.TimeUnit
 

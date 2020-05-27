@@ -2,6 +2,7 @@
  * Created by Weiyi Li on 2019-11-03.
  * https://github.com/li2
  */
+@file:Suppress("unused")
 @file:JvmName("TabLayoutExtensions")
 package me.li2.android.view.navigation
 

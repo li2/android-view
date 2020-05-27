@@ -1,12 +1,13 @@
+@file:Suppress("unused")
 package me.li2.android.view.list
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import io.reactivex.Emitter
-import io.reactivex.Observable
-import io.reactivex.ObservableEmitter
-import io.reactivex.ObservableOnSubscribe
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.core.Emitter
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.ObservableEmitter
+import io.reactivex.rxjava3.core.ObservableOnSubscribe
+import io.reactivex.rxjava3.disposables.Disposable
 import me.li2.android.common.number.orZero
 
 /**

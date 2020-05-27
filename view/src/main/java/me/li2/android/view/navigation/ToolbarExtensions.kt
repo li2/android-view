@@ -3,6 +3,7 @@
  * https://github.com/li2
  */
 @file:JvmName("ToolbarExtensions")
+@file:Suppress("unused")
 package me.li2.android.view.navigation
 
 import android.app.Activity

@@ -55,9 +55,11 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.vAndroidxSwiperefreshlayout"
 
     //Rx
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.vRxAndroid"
-    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.vRxKotlin"
-    implementation "com.jakewharton.rxbinding3:rxbinding:$rootProject.vRxBinding"
+    implementation "io.reactivex.rxjava3:rxandroid:$rootProject.vRxAndroid"
+    implementation "io.reactivex.rxjava3:rxjava:$rootProject.vRxJava"
+    //Rx Binding
+    implementation "com.jakewharton.rxbinding4:rxbinding:$rootProject.vRxBinding"
+    implementation "com.jakewharton.rxbinding4:rxbinding-appcompat:$rootProject.vRxBinding"
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$rootProject.vGlide"

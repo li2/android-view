@@ -3,6 +3,7 @@
  * https://github.com/li2
  */
 @file:JvmName("KeyboardUtils")
+@file:Suppress("unused")
 package me.li2.android.view.system
 
 import android.app.Activity

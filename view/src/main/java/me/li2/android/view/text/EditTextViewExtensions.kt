@@ -3,14 +3,15 @@
  * https://github.com/li2
  */
 @file:JvmName("EditTextViewExtensions")
+@file:Suppress("unused")
 package me.li2.android.view.text
 
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.annotation.StringRes
 import com.google.android.material.textfield.TextInputLayout
-import com.jakewharton.rxbinding3.widget.textChanges
-import io.reactivex.Observable
+import com.jakewharton.rxbinding4.widget.textChanges
+import io.reactivex.rxjava3.core.Observable
 import me.li2.android.common.number.orZero
 import me.li2.android.common.rx.mapToString
 import java.util.concurrent.TimeUnit

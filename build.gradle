@@ -31,7 +31,7 @@ allprojects {
         vTargetSdk = 29
 
         // My Libraries Dependencies
-        vLi2Common = '0.1.7'
+        vLi2Common = '0.2.0'
 
         // Android X Dependencies
         vAndroidxAppcompat = '1.1.0'
@@ -46,9 +46,10 @@ allprojects {
         vFacebookLogin = "5.11.0"
 
         // Rx Dependencies
-        vRxAndroid = '2.1.1'
-        vRxBinding = '3.1.0'
-        vRxKotlin = '2.3.0'
+        vRxAndroid = '3.0.0'
+        vRxBinding = '4.0.0'
+        vRxJava = '3.0.4'
+        vRxKotlin = '3.0.0'
 
         // Misc
         vGlide = "4.10.0"

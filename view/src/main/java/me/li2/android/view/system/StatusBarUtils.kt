@@ -3,6 +3,7 @@
  * https://github.com/li2
  */
 @file:JvmName("StatusBarUtils")
+@file:Suppress("unused")
 package me.li2.android.view.system
 
 import android.annotation.SuppressLint
