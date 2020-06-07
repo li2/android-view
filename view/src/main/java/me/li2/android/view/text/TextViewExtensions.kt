@@ -6,7 +6,6 @@
 @file:Suppress("unused")
 package me.li2.android.view.text
 
-import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.annotation.StringRes
 import com.google.android.material.textfield.TextInputLayout
@@ -67,15 +66,10 @@ fun EditText.setTextProgrammatically(text: CharSequence?) {
     tag = null
 }
 
-fun EditText.onImeActionDoneClicks(): Observable<Unit> {
+fun TextInputLayout.endIconClicks(): Observable<Unit> {
     return Observable.create { emitter ->
-        setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                emitter.onNext(Unit)
-                true
-            } else {
-                false
-            }
+        setEndIconOnClickListener {
+            emitter.onNext(Unit)
         }
     }
 }
