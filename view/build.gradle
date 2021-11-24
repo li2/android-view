@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion vCompileSdk
+    compileSdkVersion androidCompileSdk_version
 
     defaultConfig {
-        minSdkVersion vMinSdk
-        targetSdkVersion vTargetSdk
+        minSdkVersion androidMinSdk_version
+        targetSdkVersion androidTargetSdk_version
         versionCode 1
         versionName "0.2.1"
 
@@ -40,30 +40,30 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$vKotlin"
-    implementation "androidx.appcompat:appcompat:$rootProject.vAndroidxAppcompat"
-    implementation "androidx.core:core-ktx:$rootProject.vAndroidxCoreKtx"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "androidx.core:core-ktx:$androidx_ktx_version"
 
-    testImplementation "junit:junit:$rootProject.vJunit"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.vAndroidxTestJunit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.vAndroidxTestEspresso"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidxTestExt_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCore_version"
 
     implementation "com.github.li2:android-common:$vLi2Common"
 
-    implementation"com.google.android.material:material:$rootProject.vGoogleMaterial"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.vAndroidxConstraintlayout"
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.vAndroidxSwiperefreshlayout"
+    implementation"com.google.android.material:material:$g_material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$androidx_swiperefreshlayout_version"
 
     //Rx
-    implementation "io.reactivex.rxjava3:rxandroid:$rootProject.vRxAndroid"
-    implementation "io.reactivex.rxjava3:rxjava:$rootProject.vRxJava"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxJava_version"
     //Rx Binding
-    implementation "com.jakewharton.rxbinding4:rxbinding:$rootProject.vRxBinding"
-    implementation "com.jakewharton.rxbinding4:rxbinding-appcompat:$rootProject.vRxBinding"
+    implementation "com.jakewharton.rxbinding4:rxbinding:$rxbinding4_version"
+    implementation "com.jakewharton.rxbinding4:rxbinding-appcompat:$rxbinding4_version"
 
     //Glide
-    implementation "com.github.bumptech.glide:glide:$rootProject.vGlide"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     //Timber
-    implementation "com.jakewharton.timber:timber:$rootProject.vTimber"
+    implementation "com.jakewharton.timber:timber:$timber_version"
 }
