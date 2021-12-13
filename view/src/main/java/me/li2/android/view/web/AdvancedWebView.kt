@@ -80,7 +80,7 @@ class AdvancedWebView @JvmOverloads constructor(
         }
     }
 
-    fun loadUrl(url: String?, additionalHttpHeaders: Map<String, String>? = null) {
+    fun loadUrl(url: String, additionalHttpHeaders: Map<String, String>? = null) {
         binding.isLoading = true
         if (additionalHttpHeaders == null) {
             binding.webview.loadUrl(url)
@@ -128,7 +128,7 @@ class AdvancedWebView @JvmOverloads constructor(
         @JvmStatic
         @BindingAdapter(value = ["url", "additionalHttpHeaders"], requireAll = false)
         fun loadUrl(webView: AdvancedWebView,
-                    url: String?,
+                    url: String,
                     additionalHttpHeaders: Map<String, String>? = null) {
             webView.loadUrl(url, additionalHttpHeaders)
         }
